@@ -94,6 +94,15 @@
     <version>1.16</version>
 </dependency>
 ~~~
+* DBCP 모듈
+~~~
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+<dependency>
+    <groupId>commons-dbcp</groupId>
+    <artifactId>commons-dbcp</artifactId>
+    <version>1.4</version>
+</dependency>
+~~~
 
 #### 5. pom.xml 에서 JUnit 버전과 Servlet 버전 변경
 * Servlet 버전 변경
@@ -138,7 +147,7 @@ log4jdbc.dump.sql.maxlinelength=0
 ~~~
 <?xml version="1.0" encoding="UTF-8"?>
 <contiguration>
-  <include resource="org/springframework/boot/logging/logback/base.xml/>
+  <include resource="org/springframework/boot/logging/logback/base.xml" />
   
   <!-- log4jdbc-log4j2 -->
   <logger name="jdbc.sqlonly" level="DEBUG">

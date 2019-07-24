@@ -7,6 +7,12 @@
 `Usable DB : oracle, mysql, mssql, hana, (+ mongo?) ...etc`</br>
 `이번에 사용한 DB : mssql`</br>
 
+## Spring MVC pattern
+
+<img src="http://thumbnail.egloos.net/600x0/http://pds21.egloos.com/pds/201202/24/49/d0144949_4f47a0b19ed33.png">
+
+출처 : http://egloos.zum.com/springmvc/v/504151#type=comment&page=3
+
 ---
 
 ## 스프링 프로젝트 초기 설정

@@ -169,3 +169,55 @@ log4jdbc.dump.sql.maxlinelength=0
 ---
 
 ## 스프링 프로젝트 AOP 설정
+
+#### 1. pom.xml - properties 추가
+~~~
+<org.aspectj-version>1.9.2</org.aspectj-version>
+~~~
+
+#### 2. dependency 수정
+~~~
+<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+~~~
+
+#### 3. Java 파일 생성
+~~~
+@Aspect
+public class LoggerAspect {
+  protected Log log = LogFactory.getLog(LoggerAspect.class);
+  static String name = "";
+  static String type = "";
+  @Around("execution(* first..controller.*Controller.*(..)) or execution(* first..service.*Impl.*(..)) or execution(* first..dao.*DAO.*(..))")
+  public Object logPrint(ProceedingJoinPoint joinPoint) throws Throwable {
+    type = joinPoint.getSignature().getDeclaringTypeName();
+    if (type.indexOf("Controller") > -1) {
+    name = "Controller \t: ";
+    }
+    else if (type.indexOf("Service") > -1) {
+    name = "ServiceImpl \t: ";
+    }
+    else if (type.indexOf("DAO") > -1) {
+    name = "DAO \t\t: ";
+    }
+    log.debug(name + type + "." + joinPoint.getSignature().getName() + "()");
+    return joinPoint.proceed();
+  }
+}
+~~~

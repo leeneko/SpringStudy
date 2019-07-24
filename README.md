@@ -35,8 +35,8 @@
   </init-param>
 </filter>
 <filter-mapping>
-<filter-name>encodingFilter</filter-name>
-<url-pattern>/*</url-pattern>
+  <filter-name>encodingFilter</filter-name>
+  <url-pattern>/*</url-pattern>
 </filter-mapping>
 ~~~
 

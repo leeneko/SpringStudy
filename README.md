@@ -20,7 +20,7 @@
 #### 1. 프로젝트 생성
 * File - Spring Legacy Project
 * Spring MVC Project 선택
-* 한글 인코딩(UTF-8 Encoding)
+* web.xml 한글 인코딩(UTF-8 Encoding)
 ~~~
 <filter>
   <filter-name>encodingFilter</filter-name>

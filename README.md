@@ -5,7 +5,7 @@
 `STS : 3.9.8`</br>
 `Spring : 4.3.24`</br>
 `Usable DB : oracle, mysql, mssql, hana, (+ mongo?) ...etc`</br>
-`https://downloads.mariadb.org/mariadb/+releases/`</br>
+[마리아DB](https://downloads.mariadb.org/mariadb/+releases/)
 
 ## Spring MVC pattern
 

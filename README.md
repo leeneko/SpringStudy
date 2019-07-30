@@ -5,7 +5,7 @@
 `STS : 3.9.8`</br>
 `Spring : 4.3.24`</br>
 `Usable DB : oracle, mysql, mssql, hana, (+ mongo?) ...etc`</br>
-`이번에 사용한 DB : mssql`</br>
+`https://downloads.mariadb.org/mariadb/+releases/`</br>
 
 ## Spring MVC pattern
 

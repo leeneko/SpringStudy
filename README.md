@@ -166,3 +166,45 @@ log4jdbc.dump.sql.maxlinelength=0
     <logger name="jdbc.connection" level="INFO"/> </logger>
 </contiguration>
 ~~~
+
+#### 7. Spring MVC에서 Get방식 jsp 파일에 한글 Encoding
+
+아래 코드 추가
+~~~
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+~~~
+
+#### 8. CSS, JQuery, Bootstrap 적용
+
+Spring 적용을 안했을 시 css link 코드는 아래와 같다.
+~~~
+<link rel="stylesheet" type="text/css" href="style.css" />
+~~~
+
+하지만 Spring 프레임워크를 적용한 후 css link가 먹히지 않는다.
+~~~
+<script type="text/javascript" src="${pageContext.request.contextPath}"></script>
+<link href="${pageContext.request.contextPath}/view/style.css" rel="stylesheet" />
+<link href="<c:url value="/resource/css/bootstrap.min.css" />" rel="stylesheet">
+~~~
+위와 같이 여러 해결 방법이 있다.
+
+따라서 나는 아래 방법을 Standard로 사용하려한다.
+src/main/webapp/resources 밑에 css, js 폴더를 생성한 뒤
+~~~
+resources
+└ css
+  └ bootstrap.css
+  └ bootstrap.min.css
+└ js
+  └ jquery-3.4.1.js
+  └ bootstrap.bundle.js
+  └ bootstrap.bundle.min.js
+~~~
+
+아래 코드를 jsp 파일 내에 추가
+~~~
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-3.4.1.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.bundle.min.js" />"></script>
+~~~

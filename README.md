@@ -208,3 +208,6 @@ resources
 <script src="<c:url value="/resources/js/jquery-3.4.1.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.bundle.min.js" />"></script>
 ~~~
+
+#### 9. Bootstrap 오류 Uncaught TypeError: Cannot read property 'fn' of undefined
+위의 오류 발생 시 bootstrap.js가 jquery.js 둘의 위치가 잘못되었을 때 나타나며 jquery.js를 더 먼저 선언해주면 해결된다.
